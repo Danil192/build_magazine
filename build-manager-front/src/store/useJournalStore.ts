@@ -45,5 +45,18 @@ export const useJournalStore = create<JournalState>((set, get) => ({
   addWorkType: async (type) => {
     await axios.post(`${API_URL}/work-types/`, type);
     get().fetchWorkTypes();
-  }
+  },
+
+    updateLog: async (id: number, log: Partial<WorkLog>) => {
+    await axios.put(`${API_URL}/work-logs/${id}/`, log);
+    get().fetchLogs();
+  },
+  updateWorkType: async (id: number, type: Partial<WorkType>) => {
+    await axios.put(`${API_URL}/work-types/${id}/`, type);
+    get().fetchWorkTypes();
+  },
+  deleteWorkType: async (id: number) => {
+    await axios.delete(`${API_URL}/work-types/${id}/`);
+    get().fetchWorkTypes();
+  },
 }));

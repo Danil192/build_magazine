@@ -59,7 +59,7 @@ export function AddLogForm({ onSuccess }: { onSuccess: () => void }) {
               <Select onValueChange={field.onChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Выберите из справочника" />
+                    <SelectValue placeholder="Выберите" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
@@ -92,7 +92,7 @@ export function AddLogForm({ onSuccess }: { onSuccess: () => void }) {
             render={({ field }) => (
               <FormItem>
                 <FormLabel>Исполнитель</FormLabel>
-                <FormControl><Input placeholder="Иванов И.И." {...field} /></FormControl>
+                <FormControl><Input placeholder="" {...field} /></FormControl>
                 <FormMessage />
               </FormItem>
             )}
